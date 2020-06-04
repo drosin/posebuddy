@@ -5,3 +5,5 @@ json_file_name: "data.json"
 update_period_ms: 100
 cam_num: 0
 always_on_top: True
+training_num_images: 200
+training_update_period_s: 0.1

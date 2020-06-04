@@ -10,14 +10,11 @@ from src.training import run_training
 
 class App:
     def __init__(self, config_path='config/config.yaml'):
-        config = load_yaml(config_path)
-        self.update_period_ms = config['update_period_ms']
-        self.predictor = Predictor(config['image_dir'], config['job_dir'])
+        self.config = load_yaml(config_path)
+        self.predictor = Predictor(self.config['image_dir'], self.config['job_dir'])
         self.camera = cv2.VideoCapture(0)
 
-        self.initialize_gui(
-            app_name=config['app_name'], always_on_top=config['always_on_top']
-        )
+        self.initialize_gui()
         self.gauge_yellow = 0.3
         self.gauge_red = 0.6
         self.initialize_gauge()
@@ -27,11 +24,11 @@ class App:
         self.get_prediction_event()
         self.gui.mainloop()
 
-    def initialize_gui(self, app_name: str, always_on_top: bool):
+    def initialize_gui(self):
         self.gui = tk.Tk()
-        if always_on_top:
+        if self.config['always_on_top']:
             self.gui.attributes('-topmost', True)
-        self.gui.title(app_name)
+        self.gui.title(self.config['app_name'])
 
     def initialize_gauge(self):
         self.gauge = tk_tools.Gauge(
@@ -62,7 +59,7 @@ class App:
         self.update_gauge(bad_pose_prob)
         self.update_led(bad_pose_prob)
         self.alert_user(bad_pose_prob)
-        self.gui.after(self.update_period_ms, self.get_prediction_event)
+        self.gui.after(self.config['update_period_ms'], self.get_prediction_event)
 
     def update_gauge(self, bad_pose_prob: float):
         self.gauge.set_value(
@@ -83,7 +80,40 @@ class App:
         pass
 
     def retrain(self):
-        pass
+        answer = messagebox.askquestion(
+            'Retraining', 'Are you sure that you want to retrain'
+        )
+        if answer == 'yes':
+            self.led.to_grey(on=False)
+            self.led.to_grey(on=False)
+            self.gauge.set_value(50)
+            messagebox.showinfo(
+                'Retraining', 'Please sit in a good position while moving around a bit.'
+            )
+            get_images_from_webcam(
+                self.config['image_dir'],
+                name='good',
+                cam_num=self.config['cam_num'],
+                num_images=self.config['training_num_images'],
+                sleep_time_s=self.config['training_update_period_s'],
+            )
+            messagebox.showinfo(
+                'Retraining', 'Please sit in a bad position while moving around a bit.'
+            )
+            get_images_from_webcam(
+                self.config['image_dir'],
+                name='bad',
+                cam_num=self.config['cam_num'],
+                num_images=self.config['training_num_images'],
+                sleep_time_s=self.config['training_update_period_s'],
+            )
+            messagebox.showinfo('Retraining', 'Retraining starting. It will take a bit.')
+            run_training(
+                self.config['image_dir'],
+                self.config['job_dir'],
+                self.config['json_file_name'],
+            )
+            messagebox.showinfo('Retraining', 'Retraining done.')
 
 
 App()

@@ -8,6 +8,8 @@ required_keys = [
     'cam_num',
     'always_on_top',
     'update_period_ms',
+    'training_num_images',
+    'training_update_period_s',
 ]
 
 
