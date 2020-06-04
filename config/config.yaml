@@ -1,0 +1,7 @@
+app_name: "Posebuddy"
+image_dir: "train_job/images"
+job_dir: "train_job"
+json_file_name: "data.json"
+update_period_ms: 100
+cam_num: 0
+always_on_top: True
