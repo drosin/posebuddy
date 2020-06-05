@@ -51,6 +51,7 @@ class App:
         self.gauge.pack()
 
     def initialize_led(self):
+        return
         self.led = tk_tools.Led(self.gui, size=50)
         self.led.pack()
 
@@ -67,7 +68,7 @@ class App:
         bad_pose_prob = self.predictor.predict(image)
         presence_probability = self.presence_predictor.predict(image)
         print(
-            f'Bad posture prob: {str(round(bad_pose_prob,2))}. Presence prob: {str(round(1-presence_probability,2))}'
+            f'\nBad posture prob: {str(round(bad_pose_prob,2))},\nPresence prob: {str(round(1-presence_probability,2))}'
         )
         self.update_gauge(bad_pose_prob)
         self.update_led(bad_pose_prob)
@@ -81,6 +82,7 @@ class App:
         )
 
     def update_led(self, bad_pose_prob: float):
+        return
         if bad_pose_prob < self.gauge_yellow:
             self.led.to_green(on=True)
         elif bad_pose_prob < self.gauge_red:
