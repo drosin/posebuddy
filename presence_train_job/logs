@@ -1,0 +1,200 @@
+2020-06-04 20:08:35 - dataprep - INFO - 
+****** Running image validation ******
+
+2020-06-04 20:08:35 - dataprep - INFO - 
+****** Running samples validation ******
+
+2020-06-04 20:08:35 - dataprep - INFO - Class distribution after validation:
+2020-06-04 20:08:35 - dataprep - INFO - bad: 200 (100.0%)
+2020-06-04 20:18:25 - dataprep - INFO - 
+****** Running image validation ******
+
+2020-06-04 20:18:25 - dataprep - INFO - 
+****** Running samples validation ******
+
+2020-06-04 20:18:25 - dataprep - INFO - Class distribution after validation:
+2020-06-04 20:18:25 - dataprep - INFO - bad: 200 (100.0%)
+2020-06-04 20:28:33 - dataprep - INFO - 
+****** Running image validation ******
+
+2020-06-04 20:28:33 - dataprep - INFO - 
+****** Running samples validation ******
+
+2020-06-04 20:28:33 - dataprep - INFO - Class distribution after validation:
+2020-06-04 20:28:33 - dataprep - INFO - bad: 200 (100.0%)
+2020-06-04 20:54:35 - dataprep - INFO - 
+****** Running image validation ******
+
+2020-06-04 20:54:35 - dataprep - INFO - 
+****** Running samples validation ******
+
+2020-06-04 20:54:35 - dataprep - INFO - Class distribution after validation:
+2020-06-04 20:54:35 - dataprep - INFO - bad: 200 (100.0%)
+2020-06-04 21:01:34 - dataprep - INFO - 
+****** Running image validation ******
+
+2020-06-04 21:01:35 - dataprep - INFO - 
+****** Running samples validation ******
+
+2020-06-04 21:01:35 - dataprep - INFO - Class distribution after validation:
+2020-06-04 21:01:35 - dataprep - INFO - away: 100 (50.0%)
+2020-06-04 21:01:35 - dataprep - INFO - present: 100 (50.0%)
+2020-06-04 21:01:35 - dataprep - INFO - Class mapping:
+{0: 'away', 1: 'present'}
+2020-06-04 21:01:35 - dataprep - INFO - 
+****** Creating train/val/test sets ******
+
+2020-06-04 21:01:35 - dataprep - INFO - Split distribution: train: 0.65, val: 0.15, test: 0.2
+
+2020-06-04 21:01:35 - dataprep - INFO - Partial split distribution: train: 0.65, val: 0.15, test: 0.20
+
+2020-06-04 21:01:35 - dataprep - INFO - Train set:
+2020-06-04 21:01:35 - dataprep - INFO - 0: 65 (50.0%)
+2020-06-04 21:01:35 - dataprep - INFO - 1: 65 (50.0%)
+2020-06-04 21:01:35 - dataprep - INFO - Val set:
+2020-06-04 21:01:35 - dataprep - INFO - 0: 15 (50.0%)
+2020-06-04 21:01:35 - dataprep - INFO - 1: 15 (50.0%)
+2020-06-04 21:01:35 - dataprep - INFO - Test set:
+2020-06-04 21:01:35 - dataprep - INFO - 0: 20 (50.0%)
+2020-06-04 21:01:35 - dataprep - INFO - 1: 20 (50.0%)
+2020-06-04 21:01:35 - dataprep - INFO - 
+****** Resizing images ******
+
+2020-06-04 21:01:35 - dataprep - INFO - Stored 200 resized images under train_job/presence_images_resized
+2020-06-04 21:01:35 - dataprep - INFO - Changed image directory to train_job/presence_images_resized
+2020-06-04 21:01:38 - training - INFO - Early stopping patience: 15
+2020-06-04 21:01:38 - training - INFO - Learning rate patience: 5
+2020-06-04 21:01:38 - training - INFO - 
+****** Train dense layers ******
+
+2020-06-04 21:01:45 - tf_keras - DEBUG - Epoch: 1 - val_loss: 0.9750 - val_acc: 0.4333 - loss: 1.7094 - acc: 0.4462
+2020-06-04 21:01:45 - tf_keras - INFO - 
+Epoch 00001 val_acc improved from -inf to 0.43333,
+saving model to /Users/arjun.roy/Projects/Pose_detection/David/posebuddy_V2/posebuddy/presence_train_job/models/model_mobilenet_01_0.433.hdf5
+2020-06-04 21:01:58 - tf_keras - DEBUG - Epoch: 2 - val_loss: 0.9016 - val_acc: 0.4667 - loss: 1.0393 - acc: 0.6462 - lr: 0.0010
+2020-06-04 21:01:58 - tf_keras - INFO - 
+Epoch 00002 val_acc improved from 0.43333 to 0.46667,
+saving model to /Users/arjun.roy/Projects/Pose_detection/David/posebuddy_V2/posebuddy/presence_train_job/models/model_mobilenet_02_0.467.hdf5
+2020-06-04 21:02:02 - tf_keras - DEBUG - Epoch: 3 - val_loss: 0.8559 - val_acc: 0.4667 - loss: 0.8664 - acc: 0.6615 - lr: 0.0010
+2020-06-04 21:02:02 - tf_keras - INFO - 
+Epoch 00003 val_acc did not improve from 0.46667
+2020-06-04 21:02:06 - tf_keras - DEBUG - Epoch: 4 - val_loss: 0.8072 - val_acc: 0.4667 - loss: 0.6169 - acc: 0.7692 - lr: 0.0010
+2020-06-04 21:02:06 - tf_keras - INFO - 
+Epoch 00004 val_acc did not improve from 0.46667
+2020-06-04 21:02:11 - tf_keras - DEBUG - Epoch: 5 - val_loss: 0.7687 - val_acc: 0.5000 - loss: 0.4984 - acc: 0.8154 - lr: 0.0010
+2020-06-04 21:02:11 - tf_keras - INFO - 
+Epoch 00005 val_acc improved from 0.46667 to 0.50000,
+saving model to /Users/arjun.roy/Projects/Pose_detection/David/posebuddy_V2/posebuddy/presence_train_job/models/model_mobilenet_05_0.500.hdf5
+2020-06-04 21:02:11 - training - INFO - 
+****** Train all layers ******
+
+2020-06-04 21:02:36 - tf_keras - DEBUG - Epoch: 6 - val_loss: 0.0081 - val_acc: 1.0000 - loss: 0.3151 - acc: 0.8769
+2020-06-04 21:02:36 - tf_keras - INFO - 
+Epoch 00006 val_acc improved from 0.50000 to 1.00000,
+saving model to /Users/arjun.roy/Projects/Pose_detection/David/posebuddy_V2/posebuddy/presence_train_job/models/model_mobilenet_06_1.000.hdf5
+2020-06-04 21:02:57 - tf_keras - DEBUG - Epoch: 7 - val_loss: 0.0122 - val_acc: 1.0000 - loss: 0.0186 - acc: 0.9923 - lr: 0.0003
+2020-06-04 21:02:57 - tf_keras - INFO - 
+Epoch 00007 val_acc did not improve from 1.00000
+2020-06-04 21:03:16 - tf_keras - DEBUG - Epoch: 8 - val_loss: 0.0135 - val_acc: 1.0000 - loss: 0.0004 - acc: 1.0000 - lr: 0.0003
+2020-06-04 21:03:16 - tf_keras - INFO - 
+Epoch 00008 val_acc did not improve from 1.00000
+2020-06-04 21:03:35 - tf_keras - DEBUG - Epoch: 9 - val_loss: 0.0078 - val_acc: 1.0000 - loss: 0.0649 - acc: 0.9846 - lr: 0.0003
+2020-06-04 21:03:35 - tf_keras - INFO - 
+Epoch 00009 val_acc did not improve from 1.00000
+2020-06-04 21:03:55 - tf_keras - DEBUG - Epoch: 10 - val_loss: 0.0080 - val_acc: 1.0000 - loss: 0.0399 - acc: 0.9923 - lr: 0.0003
+2020-06-04 21:03:55 - tf_keras - INFO - 
+Epoch 00010 val_acc did not improve from 1.00000
+2020-06-04 21:03:55 - evaluation - INFO - 
+****** Load model ******
+
+2020-06-04 21:04:02 - evaluation - INFO - loaded /Users/arjun.roy/Projects/Pose_detection/David/posebuddy_V2/posebuddy/presence_train_job/models/model_mobilenet_06_1.000.hdf5
+2020-06-04 21:04:02 - evaluation - INFO - 
+****** Make prediction on test set ******
+
+2020-06-04 21:04:04 - evaluation - INFO - 
+****** Print distribution on test set ******
+
+2020-06-04 21:04:04 - evaluation - INFO - away   	20
+2020-06-04 21:04:04 - evaluation - INFO - present	20
+2020-06-04 21:04:04 - evaluation - INFO - 
+****** Print classification report ******
+
+2020-06-04 21:04:04 - evaluation - INFO -        	prec	rec	f1	support
+2020-06-04 21:04:04 - evaluation - INFO - away   	1.00	1.00	1.00	20	
+2020-06-04 21:04:04 - evaluation - INFO - present	1.00	1.00	1.00	20	
+2020-06-04 21:04:04 - evaluation - INFO - macro avg	1.00	1.00	1.00	40	
+2020-06-04 21:04:04 - evaluation - INFO - weighted avg	1.00	1.00	1.00	40	
+2020-06-04 21:04:04 - evaluation - INFO - 
+****** Print confusion matrix (recall) ******
+
+2020-06-04 21:04:04 - evaluation - INFO - away   	1.00	0.00	
+2020-06-04 21:04:04 - evaluation - INFO - present	0.00	1.00	
+2020-06-04 21:04:04 - evaluation - INFO - 
+****** Print confusion matrix (precision) ******
+
+2020-06-04 21:04:04 - evaluation - INFO - away   	1.00	0.00	
+2020-06-04 21:04:04 - evaluation - INFO - present	0.00	1.00	
+2020-06-04 21:15:08 - evaluation - INFO - 
+****** Load model ******
+
+2020-06-04 21:15:17 - evaluation - INFO - loaded /Users/arjun.roy/Projects/Pose_detection/David/posebuddy_V2/posebuddy/presence_train_job/models/model_mobilenet_06_1.000.hdf5
+2020-06-04 21:17:12 - evaluation - INFO - 
+****** Load model ******
+
+2020-06-04 21:17:20 - evaluation - INFO - loaded /Users/arjun.roy/Projects/Pose_detection/David/posebuddy_V2/posebuddy/presence_train_job/models/model_mobilenet_06_1.000.hdf5
+2020-06-05 07:48:57 - evaluation - INFO - 
+****** Load model ******
+
+2020-06-05 07:49:06 - evaluation - INFO - loaded /Users/arjun.roy/Projects/Pose_detection/David/posebuddy_V2/posebuddy/presence_train_job/models/model_mobilenet_06_1.000.hdf5
+2020-06-05 07:50:53 - evaluation - INFO - 
+****** Load model ******
+
+2020-06-05 07:51:02 - evaluation - INFO - loaded /Users/arjun.roy/Projects/Pose_detection/David/posebuddy_V2/posebuddy/presence_train_job/models/model_mobilenet_06_1.000.hdf5
+2020-06-05 07:55:26 - evaluation - INFO - 
+****** Load model ******
+
+2020-06-05 07:55:34 - evaluation - INFO - loaded /Users/arjun.roy/Projects/Pose_detection/David/posebuddy_V2/posebuddy/presence_train_job/models/model_mobilenet_06_1.000.hdf5
+2020-06-05 08:08:30 - evaluation - INFO - 
+****** Load model ******
+
+2020-06-05 08:08:42 - evaluation - INFO - loaded /Users/arjun.roy/Projects/Pose_detection/David/posebuddy_V2/posebuddy/presence_train_job/models/model_mobilenet_06_1.000.hdf5
+2020-06-05 09:18:16 - evaluation - INFO - 
+****** Load model ******
+
+2020-06-05 09:18:24 - evaluation - INFO - loaded /Users/arjun.roy/Projects/Pose_detection/David/posebuddy_V2/posebuddy/presence_train_job/models/model_mobilenet_06_1.000.hdf5
+2020-06-05 09:18:48 - evaluation - INFO - 
+****** Load model ******
+
+2020-06-05 09:18:57 - evaluation - INFO - loaded /Users/arjun.roy/Projects/Pose_detection/David/posebuddy_V2/posebuddy/presence_train_job/models/model_mobilenet_06_1.000.hdf5
+2020-06-05 09:20:59 - evaluation - INFO - 
+****** Load model ******
+
+2020-06-05 09:21:07 - evaluation - INFO - loaded /Users/arjun.roy/Projects/Pose_detection/David/posebuddy_V2/posebuddy/presence_train_job/models/model_mobilenet_06_1.000.hdf5
+2020-06-05 09:22:12 - evaluation - INFO - 
+****** Load model ******
+
+2020-06-05 09:22:21 - evaluation - INFO - loaded /Users/arjun.roy/Projects/Pose_detection/David/posebuddy_V2/posebuddy/presence_train_job/models/model_mobilenet_06_1.000.hdf5
+2020-06-05 09:25:51 - evaluation - INFO - 
+****** Load model ******
+
+2020-06-05 09:26:00 - evaluation - INFO - loaded /Users/arjun.roy/Projects/Pose_detection/David/posebuddy_V2/posebuddy/presence_train_job/models/model_mobilenet_06_1.000.hdf5
+2020-06-05 09:33:29 - evaluation - INFO - 
+****** Load model ******
+
+2020-06-05 09:33:37 - evaluation - INFO - loaded /Users/arjun.roy/Projects/Pose_detection/David/posebuddy_V2/posebuddy/presence_train_job/models/model_mobilenet_06_1.000.hdf5
+2020-06-05 09:34:47 - evaluation - INFO - 
+****** Load model ******
+
+2020-06-05 09:34:56 - evaluation - INFO - loaded /Users/arjun.roy/Projects/Pose_detection/David/posebuddy_V2/posebuddy/presence_train_job/models/model_mobilenet_06_1.000.hdf5
+2020-06-05 09:35:30 - evaluation - INFO - 
+****** Load model ******
+
+2020-06-05 09:35:39 - evaluation - INFO - loaded /Users/arjun.roy/Projects/Pose_detection/David/posebuddy_V2/posebuddy/presence_train_job/models/model_mobilenet_06_1.000.hdf5
+2020-06-05 09:43:52 - evaluation - INFO - 
+****** Load model ******
+
+2020-06-05 09:44:03 - evaluation - INFO - loaded /Users/arjun.roy/Projects/Pose_detection/David/posebuddy_V2/posebuddy/presence_train_job/models/model_mobilenet_06_1.000.hdf5
+2020-06-05 09:46:08 - evaluation - INFO - 
+****** Load model ******
+
+2020-06-05 09:46:21 - evaluation - INFO - loaded /Users/arjun.roy/Projects/Pose_detection/David/posebuddy_V2/posebuddy/presence_train_job/models/model_mobilenet_06_1.000.hdf5

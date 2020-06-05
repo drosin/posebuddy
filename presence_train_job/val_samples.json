@@ -1,0 +1,122 @@
+[
+  {
+    "image_id": "present_83.jpg",
+    "label": 1
+  },
+  {
+    "image_id": "away_37.jpg",
+    "label": 0
+  },
+  {
+    "image_id": "present_91.jpg",
+    "label": 1
+  },
+  {
+    "image_id": "away_72.jpg",
+    "label": 0
+  },
+  {
+    "image_id": "present_78.jpg",
+    "label": 1
+  },
+  {
+    "image_id": "away_23.jpg",
+    "label": 0
+  },
+  {
+    "image_id": "present_60.jpg",
+    "label": 1
+  },
+  {
+    "image_id": "away_0.jpg",
+    "label": 0
+  },
+  {
+    "image_id": "present_81.jpg",
+    "label": 1
+  },
+  {
+    "image_id": "present_96.jpg",
+    "label": 1
+  },
+  {
+    "image_id": "away_94.jpg",
+    "label": 0
+  },
+  {
+    "image_id": "away_11.jpg",
+    "label": 0
+  },
+  {
+    "image_id": "away_46.jpg",
+    "label": 0
+  },
+  {
+    "image_id": "away_10.jpg",
+    "label": 0
+  },
+  {
+    "image_id": "present_13.jpg",
+    "label": 1
+  },
+  {
+    "image_id": "present_39.jpg",
+    "label": 1
+  },
+  {
+    "image_id": "present_32.jpg",
+    "label": 1
+  },
+  {
+    "image_id": "present_71.jpg",
+    "label": 1
+  },
+  {
+    "image_id": "present_45.jpg",
+    "label": 1
+  },
+  {
+    "image_id": "present_38.jpg",
+    "label": 1
+  },
+  {
+    "image_id": "away_42.jpg",
+    "label": 0
+  },
+  {
+    "image_id": "present_73.jpg",
+    "label": 1
+  },
+  {
+    "image_id": "away_7.jpg",
+    "label": 0
+  },
+  {
+    "image_id": "away_36.jpg",
+    "label": 0
+  },
+  {
+    "image_id": "away_71.jpg",
+    "label": 0
+  },
+  {
+    "image_id": "present_1.jpg",
+    "label": 1
+  },
+  {
+    "image_id": "away_47.jpg",
+    "label": 0
+  },
+  {
+    "image_id": "away_82.jpg",
+    "label": 0
+  },
+  {
+    "image_id": "present_77.jpg",
+    "label": 1
+  },
+  {
+    "image_id": "away_30.jpg",
+    "label": 0
+  }
+]
