@@ -27,3 +27,13 @@ if __name__ == "__main__":
         'please get into a bad pose and press enter. Then move around a bit while staying in the bad pose.'
     )
     get_images_from_webcam(image_dir, name='bad')
+
+    presence_image_dir = "train_job/presence_images"
+    input(
+        'please sit in your usual work posture and press enter. Just make sure you are in front of the camera.'
+    )
+    get_images_from_webcam(presence_image_dir, name='present')
+    input(
+        'please move away from the camera and press enter. This will capture your background for comparison.'
+    )
+    get_images_from_webcam(presence_image_dir, name='away')
