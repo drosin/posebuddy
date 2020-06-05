@@ -1,8 +1,10 @@
 import cv2
+from timeit import default_timer as timer
 import tkinter as tk
 from tkinter import messagebox
 import tk_tools
 from src.prediction import Predictor
+from src.prediction import Presence_Predictor
 from src.handlers.config import load_yaml
 from src.grab_images import get_images_from_webcam
 from src.training import run_training
@@ -10,13 +12,17 @@ from src.training import run_training
 
 class App:
     def __init__(self, config_path='config/config.yaml'):
-        config = load_yaml(config_path)
-        self.update_period_ms = config['update_period_ms']
-        self.predictor = Predictor(config['image_dir'], config['job_dir'])
+        self.config = load_yaml(config_path)
+        self.update_period_ms = self.config['update_period_ms']
+        self.predictor = Predictor(self.config['image_dir'], self.config['job_dir'])
+        self.presence_predictor = Presence_Predictor(
+            self.config['presence_image_dir'], self.config['presence_job_dir']
+        )
+        self.start_presence_time = timer()
         self.camera = cv2.VideoCapture(0)
 
         self.initialize_gui(
-            app_name=config['app_name'], always_on_top=config['always_on_top']
+            app_name=self.config['app_name'], always_on_top=self.config['always_on_top']
         )
         self.gauge_yellow = 0.3
         self.gauge_red = 0.6
@@ -59,9 +65,13 @@ class App:
     def get_prediction_event(self):
         _, image = self.camera.read()
         bad_pose_prob = self.predictor.predict(image)
+        presence_probability = self.presence_predictor.predict(image)
+        print(
+            f'Bad posture prob: {str(round(bad_pose_prob,2))}. Presence prob: {str(round(1-presence_probability,2))}'
+        )
         self.update_gauge(bad_pose_prob)
         self.update_led(bad_pose_prob)
-        self.alert_user(bad_pose_prob)
+        self.alert_user_pause(presence_probability)
         self.gui.after(self.update_period_ms, self.get_prediction_event)
 
     def update_gauge(self, bad_pose_prob: float):
@@ -78,9 +88,18 @@ class App:
         else:
             self.led.to_red(on=True)
 
-    def alert_user(self, bad_pose_prob: float):
-        # messagebox.showinfo('Posture Alert!', 'Kindly sit straight! Thank you.')
-        pass
+    def alert_user_pause(self, presence_probability: float):
+        if presence_probability > 0.5:
+            self.start_presence_time = timer()
+        work_time_sec = timer() - self.start_presence_time
+        if work_time_sec > self.config['present_timer_sec']:
+            print(
+                "\n You have been sitting for too long, please stand up and walk around! \n"
+            )
+            # messagebox.showinfo(
+            #     'Posture Alert!',
+            #     'You have been sitting for too long, please stand up and walk around!',
+            # )
 
     def retrain(self):
         pass

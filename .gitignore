@@ -144,3 +144,4 @@ cython_debug/
 
 # custom for this project
 data.json
+presence_data.json

@@ -1,6 +1,7 @@
 import cv2
 import time
 from src.handlers.image_helper import process_webcam_image
+from src.handlers.config import load_yaml
 
 
 def get_images_from_webcam(
@@ -17,7 +18,8 @@ def get_images_from_webcam(
 
 
 if __name__ == "__main__":
-    image_dir = "train_job/images"
+    config = load_yaml('config/config.yaml')
+    image_dir = config['image_dir']
     input(
         'please get into a good pose and press enter. Then move around a bit while staying in the good pose.'
     )
@@ -28,7 +30,7 @@ if __name__ == "__main__":
     )
     get_images_from_webcam(image_dir, name='bad')
 
-    presence_image_dir = "train_job/presence_images"
+    presence_image_dir = config['presence_image_dir']
     input(
         'please sit in your usual work posture and press enter. Just make sure you are in front of the camera.'
     )

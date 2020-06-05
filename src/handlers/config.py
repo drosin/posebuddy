@@ -8,6 +8,9 @@ required_keys = [
     'cam_num',
     'always_on_top',
     'update_period_ms',
+    'present_timer_sec',
+    'presence_image_dir',
+    'presence_job_dir',
 ]
 
 
