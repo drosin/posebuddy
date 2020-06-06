@@ -7,7 +7,7 @@ This application will give you an alarm when you get into bad posture.
 - Install miniconda or anaconda.
 - Create a new python 3.6 conda environment with `conda create -n posebuddy python=3.6`.
 - Activate your conda environment with `conda activate posebuddy`.
-- Install the dependencies with `pip install -f requirements.txt`.
+- Install the dependencies with `pip install -r requirements.txt`.
 
 ### Run capture, train, and predict individually
 - Run `python -m src.grab_images` to generate training data. While in good or bad posture, move a bit around.
