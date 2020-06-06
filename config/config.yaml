@@ -6,6 +6,6 @@ presence_job_dir: "presence_train_job"
 json_file_name: "data.json"
 presence_json_file_name: "presence_data.json"
 update_period_ms: 100
-present_timer_sec: 20
+present_timer_sec: 3600
 cam_num: 0
 always_on_top: True
